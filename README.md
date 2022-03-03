@@ -2,7 +2,7 @@
 
 This project is an app to search repositories from Github, by using its API. It has been developed with React, written in TypeScript and styled with TailwindCSS. Libraries such as Axios.js and React-Query have been used to manage API Rest queries.
 
-## How to run it.
+## How to run it
 
 First step is to clone the repository with the next URL: `https://github.com/sanadriu/github-repository-search.git`
 
@@ -17,12 +17,28 @@ Once the installation has been finished, as it's an app created with Create-Reac
 
 If you would like to create a bundle for the app, minified and optimized to be run in production mode, you must run `npm build` folder.
 
-## Future Improvements:
+## Future Improvements
 
 - Implement Storybook, which is an open source tool for building UI components and pages in isolation.
 - Implement testing.
 - Implement GraphQL to fetch repositories from Github API.
 
-## Personal feedback:
+## Personal feedback
 
 It's the first time I used TypeScript in a project. It has helped my in having a better control of the types that some values must have when passing them as argument for functions or components. When creating components, it has been similar as using the React-PropTypes library. It's appreciated to know the type of the parameters of new functions without guessing if I had to pass a value with A or B type. I have also tried make the request with GraphQL after finished the basic requirements, but I finally haven't implemented it.
+
+## Screenshots
+
+### Home
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/home.png)
+
+### Loading screen
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/loading.png)
+
+### Mobile view (iPhone SE)
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile.png)
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile-landscape.png)
+
+### Tablet View (iPad Air)
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet.png)
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet-landscape.png)
