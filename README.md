@@ -6,9 +6,9 @@ This project is an app to search repositories from Github, by using its API. It 
 
 First step is to clone the repository with the next URL: `https://github.com/sanadriu/github-repository-search.git`
 
-Later, in the project directory, you will have to run `npm install & npm install -D` to install all the dependencies required to run the app.
+Later, in the project directory, you will have to run `npm install` and `npm install -D` to install all the dependencies required to run the app.
 
-The app makes use of environment variables, such that you will have to create a `.env` file in the project folder where you will have to specify 2 values:
+The app makes use of environment variables, so that you will have to create a `.env` file in the project folder where you will have to specify 2 values, in order to request data GitHub API from the application:
 
 - REACT_APP_GITHUB_AUTH_TOKEN: It's an authentication token used to interact with the GitHub API.
 - REACT_APP_GITHUB_URL: It's currently `https://api.github.com`
@@ -30,15 +30,17 @@ It's the first time I used TypeScript in a project. It has helped my in having a
 ## Screenshots
 
 ### Home
+
 ![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/home.png)
 
 ### Loading screen
+
 ![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/loading.png)
 
 ### Mobile view (iPhone SE)
-![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile.png)
-![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile-landscape.png)
+
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile.png) ![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/mobile-landscape.png)
 
 ### Tablet View (iPad Air)
-![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet.png)
-![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet-landscape.png)
+
+![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet.png) ![App Screenshot](https://raw.githubusercontent.com/sanadriu/github-repository-search/main/screenshots/tablet-landscape.png)
