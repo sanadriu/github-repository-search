@@ -2,6 +2,8 @@
 
 This project is an app to search repositories from Github, by using its API. It has been developed with React, written in TypeScript and styled with TailwindCSS. Libraries such as Axios.js and React-Query have been used to manage API Rest queries.
 
+You can access the application through the following link: [https://github-repo-search-tool.netlify.app](https://github-repo-search-tool.netlify.app)
+
 ## How to run it
 
 First step is to clone the repository with the next URL: `https://github.com/sanadriu/github-repository-search.git`
