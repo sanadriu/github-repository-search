@@ -1,8 +1,7 @@
 import { Repository, RepositoryData } from "../../types";
+import config from "../../config";
 
 export function normalizeRepository(item: RepositoryData): Repository {
-	const dateFormatter = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" });
-
 	return {
 		id: item.id,
 		repositoryName: item.name,
@@ -19,7 +18,7 @@ export function normalizeRepository(item: RepositoryData): Repository {
 		numStars: item.stargazers_count,
 		numWatchers: item.watchers_count,
 		numForks: item.forks_count,
-		updatedAt: dateFormatter.format(Date.parse(item.updated_at)),
-		createdAt: dateFormatter.format(Date.parse(item.created_at)),
+		updatedAt: config.dateFormatter.format(Date.parse(item.updated_at)),
+		createdAt: config.dateFormatter.format(Date.parse(item.created_at)),
 	};
 }

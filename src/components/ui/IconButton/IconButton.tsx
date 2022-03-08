@@ -1,26 +1,23 @@
+import classNames from "classnames";
 import React from "react";
 import { IconType } from "react-icons";
 
-export interface IconButtonProps {
-	className?: string;
-	title?: string;
-	type?: "button" | "submit";
-	disabled?: boolean;
+export interface IconButtonProps extends Omit<React.ComponentProps<"button">, "className"> {
+	size?: number;
 	children: IconType;
-	handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default function IconButton({
-	className,
-	title = "Icon",
-	type = "button",
-	disabled = false,
-	children: Icon,
-	handleClick = () => {},
-}: IconButtonProps): JSX.Element {
+export default function IconButton({ size = 24, children: Component, ...rest }: IconButtonProps): JSX.Element {
+	const cx = classNames(
+		"text-indigo-500",
+		"hover:text-indigo-400",
+		"active:text-indigo-600 active:scale-[0.98]",
+		"disabled:text-gray-500 disabled:hover:text-gray-500"
+	);
+
 	return (
-		<button type={type} onClick={(e) => handleClick(e)} disabled={disabled}>
-			<Icon className={className} title={title} />
+		<button className={cx} {...rest}>
+			<Component size={size} title={rest?.title} />
 		</button>
 	);
 }

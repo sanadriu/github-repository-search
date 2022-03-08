@@ -29,7 +29,7 @@ export default function Search({ searchKey }: SearchProps): JSX.Element {
 
 	return (
 		<form className={cx} onSubmit={handleSubmit}>
-			<InputField type="search" placeholder="Search..." handleChange={handleChange} value={value} />
+			<InputField type="search" placeholder="Search..." onChange={handleChange} value={value} />
 			<Button type="submit" disabled={!searchEnabled}>
 				Search
 			</Button>

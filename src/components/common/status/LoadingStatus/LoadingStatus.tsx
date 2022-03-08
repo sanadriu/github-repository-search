@@ -1,7 +1,7 @@
 import { BallTriangle } from "react-loader-spinner";
 
 export default function LoadingStatus(): JSX.Element {
-	const cx = "flex flex-col items-center gap-6 opacity-75";
+	const cx = "flex flex-col items-center gap-6 opacity-75 text-center";
 	const cxTitle = "text-3xl font-medium";
 
 	return (

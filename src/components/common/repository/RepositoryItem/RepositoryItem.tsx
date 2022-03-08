@@ -26,7 +26,3 @@ export default function RepositoryItem({ item }: RepositoryItemProps): JSX.Eleme
 		</article>
 	);
 }
-
-// {item.numStars && <span>{item.numStars}</span>}
-// {item.numForks && <span>{item.numForks}</span>}
-// {item.numWatchers && <span>{item.numWatchers}</span>}

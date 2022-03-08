@@ -12,6 +12,7 @@ const config = {
 		per_page: 10,
 	},
 	numberFormatter: new Intl.NumberFormat(),
+	dateFormatter: new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }),
 };
 
 export default config;

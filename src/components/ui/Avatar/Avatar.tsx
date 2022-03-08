@@ -1,26 +1,23 @@
 import classNames from "classnames";
+import { useState } from "react";
 import image from "./images/avatar.png";
 
-export interface AvatarProps {
+export interface AvatarProps extends Omit<React.ComponentProps<"img">, "className" | "onLoad"> {
 	size?: "sm" | "md" | "lg";
-	src?: string;
-	text?: string;
-	type?: "rounded" | "circle";
+	shape?: "rounded" | "circle";
 }
 
-export default function Avatar({
-	size = "md",
-	type = "circle",
-	src = image,
-	text = "avatar",
-}: AvatarProps): JSX.Element {
-	const cx = classNames(type, "border-2 border-indigo-300 aspect-ratio-[1/1] object-cover shadow", {
-		"rounded-full": type === "circle",
-		"rounded-lg": type === "rounded",
+export default function Avatar({ size = "md", shape = "circle", src = image, ...rest }: AvatarProps): JSX.Element {
+	const [display, setDisplay] = useState<boolean>(false);
+
+	const cx = classNames("border-2 border-indigo-300 aspect-ratio-[1/1] object-cover shadow", {
+		"rounded-full": shape === "circle",
+		"rounded-lg": shape === "rounded",
 		"w-16": size === "sm",
-		"w-20": size === "md",
-		"w-24": size === "lg",
+		"w-24": size === "md",
+		"w-32": size === "lg",
+		invisible: !display,
 	});
 
-	return <img className={cx} src={src} alt={text} />;
+	return <img className={cx} onLoad={() => setDisplay(true)} src={src} {...rest} />;
 }

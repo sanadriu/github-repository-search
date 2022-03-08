@@ -1,25 +1,18 @@
-export type InputValue = string | number | readonly string[] | undefined;
+import classNames from "classnames";
 
-export interface InputProps {
-	type?: "text" | "search" | "email" | "password" | "date" | "tel";
-	placeholder?: string;
-	handleChange?: React.ChangeEventHandler<HTMLInputElement>;
-	handleBlur?: React.FocusEventHandler<HTMLInputElement>;
-	value?: InputValue;
+export interface InputProps extends Omit<React.ComponentProps<"input">, "className"> {
+	type?: "text" | "search" | "email" | "password" | "date" | "tel" | "number";
+	invalid?: boolean;
 }
 
-export default function InputField({ type, placeholder, handleChange, handleBlur, value }: InputProps): JSX.Element {
-	const cx =
-		"p-1 flex-grow border border-indigo-200 bg-indigo-100 rounded outline-none active:border-indigo-400 focus:border-indigo-400";
-
-	return (
-		<input
-			className={cx}
-			type={type}
-			placeholder={placeholder}
-			onChange={handleChange}
-			onBlur={handleBlur}
-			value={value}
-		/>
+export default function InputField({ type, invalid = false, ...rest }: InputProps): JSX.Element {
+	const cx = classNames(
+		"p-1 flex-grow border rounded shadow outline-none ease-out duration-100 font-light disabled:bg-gray-100 disabled:border-gray-200",
+		{
+			"border-indigo-200 bg-white focus:border-indigo-400": !invalid,
+			"border-red-200 bg-white focus:border-red-400": invalid,
+		}
 	);
+
+	return <input className={cx} type={type} {...rest} />;
 }
