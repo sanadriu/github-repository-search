@@ -7,17 +7,22 @@ export interface IconButtonProps extends Omit<React.ComponentProps<"button">, "c
 	children: IconType;
 }
 
-export default function IconButton({ size = 24, children: Component, ...rest }: IconButtonProps): JSX.Element {
+export default function IconButton({
+	size = 24,
+	children: Component,
+	disabled,
+	...rest
+}: IconButtonProps): JSX.Element {
 	const cx = classNames(
-		"text-indigo-500",
-		"hover:text-indigo-400",
-		"active:text-indigo-600 active:scale-[0.98]",
-		"disabled:text-gray-500 disabled:hover:text-gray-500"
+		!disabled && "text-indigo-500",
+		!disabled && "hover:text-indigo-400",
+		!disabled && "active:text-indigo-600 active:scale-95",
+		disabled && "text-gray-300"
 	);
 
 	return (
-		<button className={cx} {...rest}>
-			<Component size={size} title={rest?.title} />
+		<button aria-label={rest["aria-label"] || "icon-button"} className={cx} disabled={disabled} {...rest}>
+			<Component aria-hidden={true} className="pointer-events-none" size={size} title={rest?.title} />
 		</button>
 	);
 }

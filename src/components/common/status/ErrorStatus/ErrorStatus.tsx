@@ -16,7 +16,7 @@ export default function ErrorStatus({ message }: ErrorStatusProps): JSX.Element 
 			<img className={cxImage} src={errorImage} alt="error" />
 			<h3 className={cxTitle}>OOPS!</h3>
 			<h4 className={cxSubtitle}>Something went wrong :(</h4>
-			<h6 className={cxMessage}>{message}</h6>
+			<h5 className={cxMessage}>{message}</h5>
 		</div>
 	);
 }

@@ -7,7 +7,13 @@ export interface AvatarProps extends Omit<React.ComponentProps<"img">, "classNam
 	shape?: "rounded" | "circle";
 }
 
-export default function Avatar({ size = "md", shape = "circle", src = image, ...rest }: AvatarProps): JSX.Element {
+export default function Avatar({
+	size = "md",
+	shape = "circle",
+	src = image,
+	alt = "avatar",
+	...rest
+}: AvatarProps): JSX.Element {
 	const [display, setDisplay] = useState<boolean>(false);
 
 	const cx = classNames("border-2 border-indigo-300 aspect-ratio-[1/1] object-cover shadow", {
@@ -19,5 +25,5 @@ export default function Avatar({ size = "md", shape = "circle", src = image, ...
 		invisible: !display,
 	});
 
-	return <img className={cx} onLoad={() => setDisplay(true)} src={src} {...rest} />;
+	return <img className={cx} onLoad={() => setDisplay(true)} src={src} alt={alt} {...rest} />;
 }
